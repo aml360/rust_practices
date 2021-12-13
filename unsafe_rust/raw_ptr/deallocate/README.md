@@ -1,0 +1,1 @@
+## This binary crate exemplifies how to force a memory deallocation from a raw ptr
