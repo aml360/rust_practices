@@ -1,0 +1,20 @@
+{
+  "name": "neon-test-examples",
+  "version": "0.0.1",
+  "description": "Tests with neon",
+  "main": "index.node",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "cargo-cp-artifact -nc index.node -- cargo build --message-format=json-render-diagnostics",
+    "build:prod": "cargo-cp-artifact -nc index.node -- cargo build --release --message-format=json-render-diagnostics",
+    "install": "npm run build",
+    "test": "cargo test",
+    "verdaccio": "verdaccio"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.11.4",
+    "cargo-cp-artifact": "^0.1",
+    "verdaccio": "^5.2.0"
+  }
+}

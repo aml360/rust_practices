@@ -1,7 +1,9 @@
+cargo-features = ["strip"]
+
 [package]
-edition = "2018"
+edition = "2021"
 name = "aml360_napi-rs_test"
-version = "0.0.0"
+version = "0.1.0"
 
 [lib]
 crate-type = ["cdylib"]
@@ -9,9 +11,14 @@ crate-type = ["cdylib"]
 [dependencies]
 napi = "1"
 napi-derive = "1"
+mimalloc-rust = { version = "0.1" }
+
 
 [build-dependencies]
-napi-build = "1"
+napi-build = "1.1.0"
 
 [profile.release]
 lto = true
+strip = 'symbols'
+codegen-units = 1
+overflow-checks = false

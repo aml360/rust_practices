@@ -1,22 +1,23 @@
 {
-  "name": "aml360_napi-rs_test",
-  "version": "0.0.1",
+  "name": "azar",
+  "version": "0.0.0",
   "napi": {
-    "name": "aml360_napi-rs_test",
+    "name": "azar",
     "triples": {
-      "defaults": true,
+      "defaults": false,
       "additional": [
+        "x86_64-unknown-linux-gnu",
         "x86_64-unknown-linux-musl"
       ]
     }
   },
   "license": "MIT",
   "dependencies": {
+    "@node-rs/bcrypt-linux-x64-gnu": "^1.4.2",
     "@node-rs/helper": "^1.2.1"
   },
   "devDependencies": {
-    "@napi-rs/cli": "^1.3.3",
-    "verdaccio": "^5.2.0"
+    "@napi-rs/cli": "^1.2.1"
   },
   "engines": {
     "node": ">= 10"
@@ -25,11 +26,11 @@
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
+    "prepublishOnly": "napi prepublish -t npm",
     "version": "napi version"
   },
   "optionalDependencies": {
-    "aml360_napi-rs_test-darwin-x64": "0.0.0",
-    "aml360_napi-rs_test-linux-x64-gnu": "0.0.0",
-    "aml360_napi-rs_test-win32-x64-msvc": "0.0.0"
+    "azar-linux-x64-gnu": "0.0.0",
+    "azar-linux-x64-musl": "0.0.0"
   }
 }

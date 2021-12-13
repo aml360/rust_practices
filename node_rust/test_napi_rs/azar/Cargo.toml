@@ -1,0 +1,17 @@
+[package]
+edition = "2021"
+name = "azar"
+version = "0.0.1"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+napi = "1"
+napi-derive = "1"
+
+[build-dependencies]
+napi-build = "1"
+
+[profile.release]
+lto = true

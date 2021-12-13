@@ -1,0 +1,15 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+description = "Neon Hello World"
+license = "MIT"
+edition = "2018"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies.neon]
+version = "0.9.1"
+default-features = false
+features = ["napi-6"]
