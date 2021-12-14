@@ -1,0 +1,24 @@
+cargo-features = ["strip"]
+
+[package]
+name = "segfault"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+
+[profile.dev]
+overflow-checks = false
+lto = true
+codegen-units = 1
+opt-level = 0
+
+[profile.release]
+lto = true
+overflow-checks = false
+codegen-units = 1
+strip = "symbols"
+opt-level = 3
